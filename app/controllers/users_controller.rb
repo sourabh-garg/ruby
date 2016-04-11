@@ -5,6 +5,29 @@ def new
 end
 
 
+
+def edit
+	@user = User.find(params[:id])
+
+end
+
+
+def update
+
+@user = User.find(params[:id])
+
+if @user.update(user_params)
+	flash[:success] = "Account updated successfully"
+	redirect_to articles_path
+
+else
+
+
+
+end
+
+end
+
 def create
 
 @user = User.new(user_params)
