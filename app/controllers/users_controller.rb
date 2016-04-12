@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
 before_action :set_user, only: [:edit, :update, :show]
+before_action :require_same_user, only: [:edit, :update]
 
 def new
 	@user = User.new
@@ -58,6 +59,13 @@ end
 def user_params
 	params.require(:user).permit(:username, :email, :password)
 
+end
+def require_same_user
+
+	if  current_user != @user
+		flash[:danger] = "You have no power here"
+		redirect_to root_path
+	end
 end
 
 end
