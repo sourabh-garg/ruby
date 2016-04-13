@@ -1,4 +1,4 @@
-$navbar-default-bg: black;
+$navbar-default-bg: #1b1e20;
 
 
 
@@ -35,10 +35,17 @@ font-weight: bold
 	text-align: center;
 }
 
+.image{
+
+
+}
+
 .jumbotron{
 	
 	background-image: asset-url('nature.jpg');
-	background-size: 100% 100%
+	background-size: cover;
+	height : 500px;
+	
 	
 }
 
